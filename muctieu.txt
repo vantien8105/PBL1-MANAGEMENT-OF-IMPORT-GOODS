@@ -1,0 +1,46 @@
+Đề 923: Quản lý hàng nhập trong 1 tháng 
+    0.Thông tin phiếu nhập kho hàng gồm: mã hàng, tên hàng, đơn vị tính, ngày nhập, số lượng, đơn giá, thành tiền. Bổ sung các chức năng sau:  
+        -Tính thành tiền (TT) = số lượng * đơn giá và được giảm theo qui ước:  image.png 
+        -In ra bảng thống kê theo từng ngày trong tháng gồm các cột: ngày nhập, tổng số tiền 
+        -Xóa các mặt hàng có đơn vị tính là “hộp” và có mã bắt đầu là “mh1” 
+
+
+    1. Bám sát vào yêu cầu tiêu chuẩn của đề mục
+     -Các đề tài liên quan đến bài toán quản lý: cần đáp ứng yêu cầu chung dưới đây (ngoài chức năng riêng của mỗi đề tài) 
+
+            -Tạo file văn bản lưu trữ từ 10 đến 20 mẫu tin (record).
+            Chương trình quản lý đọc dữ liệu từ file và thực hiện các chức năng: 
+                +Tạo file input/ tạo hàm nhập để thêm 1 mặt hàng vào danh sách ( gồm các thuộc tính: mã mh, tên mh, ngày nhập, số lượng, đơn vị tính, tổng giá thành )
+                +Tạo hàm lưu vào file input( lưu theo từng nhóm là các ngày nhập hàng)
+            -In danh sách các thông tin của tất cả các đối tượng.
+                0.2+Tạo hàm in danh sách các mặt hàng đã nhập (của 1 ngày / của tất cả các ngày ).  
+                +Có thể tạo hàm in danh sách theo các tiêu chí khác (như in theo mã mặt hàng -đi kèm theo là các thông tin của từng mh đó-).
+
+            -Bổ sung thêm 1 đối tượng vào danh sách (vào đầu hoặc cuối) 
+                +Dùng linked list để lưu các mặt hàng - và chèn vào đầu hoặc cuối linked list.
+            -Tìm kiếm mẫu tin theo các tiêu chí khác nhau và hiển thị mẫu tin đó.
+                +Tìm kiếm mh theo nhiều tiêu chí khác nhau như:
+                    -Giá thành (lớn hơn hoặc bằng bnh đó);
+                    -Mã mh (như hàm in ds theo mã mh).
+                    -Tên mh (so sánh 2 xâu).
+
+            -Sắp xếp theo thứ tự tăng dần/ giảm dần theo các tiêu chí khác nhau 
+                + Sắp xếp và in theo thứ tự tăng/giảm dần của các mặt hàng theo các tiêu chí như:
+                    -Theo số lượng đã nhập.
+                    -Theo giá thành của mh.
+            -Chèn mẫu tin tại vị trí bất kì 
+                +Tạo hàm chèn 1 mặt hàng vào danh sách các mh của 1 ngày.
+            -Chèn mẫu tin sao cho danh sách vẫn được sắp theo thứ tự  
+                *chưa hiểu nên áp dụng vào bài này như nào :>*
+            -Xóa 1 mẫu tin.
+                +Xóa 1 mặt hàng của 1 ngày.
+                +Xóa tất cả các mặt hàng của 1 ngày.
+                0.3+Xóa tất cả các mh đã nhập có mã mh là mh... (1, 2 ,3 );
+    2. Các chức năng riêng của bài toán.
+       0.1 +Hàm tính thành tiền của 1 ngày (có áp dụng cách tính giảm giá theo quy ước & không áp dụng ).
+            => sau đó tính đc chi phí tiết kiệm của 1 ngày.
+            => có thể phát triển thêm tính chi phí tiết kiệm của cả tháng đó.
+        + Thiết kế giao diện theo cột khi in ra danh sách mặt hàng.
+            -Đã có tài liệu tham khảo.(InDS-theo-cot.png).
+        + (khi nhập mh mới)Kiểm tra xem mh đó có được nhập nhiều hơn 2 lần của 1 ngày ( sau đó tạo hàm gộp 2 lần nhập đó thành 1)
+            => 1 là để người dùng lựa chọn có muốn gộp hay không. hoặc là tự động gộp và in tbao ra màn hình
