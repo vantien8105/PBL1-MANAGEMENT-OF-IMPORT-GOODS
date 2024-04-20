@@ -19,7 +19,7 @@ typedef struct List *list;
 list make_list();
 void insert(list head, struct Element e);
 void print_list(list head);
-void docfile(); 
+void docfile(list main_list); 
 int main(){
 	list main_list = make_list();
 	int i, toggle_stop = 1;
@@ -133,21 +133,15 @@ void insert(list head, struct Element item){
 }	
 void print_list(list head){
 	printf("Danh Sach Hang Hoa\n");
-	printf( "+--------------------+--------------------+--------------------+--------------------+\n");
-    printf("|%-20s|%-20s|%-20s|%-20s|\n","MA HANG","TEN HANG","DON VI HANG","SO LUONG");
+	printf( "+--------------------+-------------------------+---------------+---------------+---------------+---------------+---------------+\n");
+    printf("|%-20s|%-25s|%-15s|%-15s|%-15s|%-15s|%-15s|\n","MA HANG","TEN HANG","DON VI HANG","SO LUONG","DON GIA", "THANH TIEN", "NGAY NHAP");
     list tmp = head -> next;
 	head = head -> next;
 	while(head != NULL){
-		printf( "|--------------------|--------------------|--------------------|--------------------|\n");
-    	printf("|%-20s|%-20s|%-20s|%-20d|\n",head -> item.mahang,head -> item.tenhang,head -> item.dvtinh,head -> item.soluong);
+		printf( "|--------------------|-------------------------|---------------|---------------|---------------|---------------|---------------|\n");
+    	printf("|%-20s|%-25s|%-15s|%-15d|%-15d|%-15d|%-15d|\n",head -> item.mahang ,head -> item.tenhang ,head -> item.dvtinh,
+		head -> item.soluong,tmp -> item.dongia, tmp -> item.thanhtien, tmp -> item.ngay);
 		head = head -> next;
 	}
-	printf( "|--------------------|--------------------|--------------------|--------------------|\n");
-	printf("|%-20s|%-20s|%-20s|%-20s|\n", "DON GIA", "THANH TIEN", "NGAY NHAP", "NOTE");
-	while(tmp != NULL){
-		printf( "|--------------------|--------------------|--------------------|--------------------|\n");
-    	printf("|%-20d|%-20d|%-20d|%-20s|\n",tmp -> item.dongia, tmp -> item.thanhtien, tmp -> item.ngay, "X");
-		tmp = tmp -> next;
-	}
-	printf( "+--------------------+--------------------+--------------------+--------------------+\n");
+	printf( "+--------------------+-------------------------+---------------+---------------+---------------+---------------+---------------+\n");	
 }
