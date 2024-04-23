@@ -20,6 +20,8 @@ list make_list();
 void insert(list head, struct Element e);
 void print_list(list head);
 void docfile(list main_list); 
+void sap_xep_theo_ngay( list head);
+void pop(list head);
 int main(){
 	list main_list = make_list();
 	int i, toggle_stop = 1;
@@ -76,9 +78,10 @@ int main(){
 				
 				break;
 			case 8:
-				
+				pop(main_list);
 				break;
 			case 9:
+//				sap_xep_theo_ngay(main_list);
 				print_list(main_list);
 				break;
 			case 0:
@@ -90,7 +93,6 @@ int main(){
 				continue;
 		}
 	}
-	
 	return 0;
 }
 void docfile(list main_list){
@@ -117,6 +119,8 @@ void docfile(list main_list){
 list make_list(){
     list head = malloc(sizeof(struct List));
     head -> next = NULL;
+//    return head;
+    // tai sao ham ni khong return ve cai chi het??
 }
 void insert(list head, struct Element item){
 	list tmp = make_list();
@@ -131,17 +135,70 @@ void insert(list head, struct Element item){
 		tmp -> pre = head;
 	}
 }	
+
+void pop(list head){
+	char mh[100];
+	int ngay;
+	printf("Nhap ten ma hang va ngay nhap hang ma ban can xoa: \n");
+	gets(mh);
+	getchar(); 
+	printf("%s",mh); 
+	scanf("%d", &ngay);
+//	printf("%s  %d\n", mh,ngay);
+	list tmp = head;
+	while (tmp->next != NULL){
+		printf("%s",tmp->next -> item.mahang);
+		printf("%d\n", tmp->next-> item.ngay);
+		if( strcmp(mh, tmp->next->item.mahang) &&  tmp->next->item.ngay == ngay){
+			printf("aa");
+			list pop = tmp->next;
+			tmp->next = tmp->next->next;
+			free(pop);
+		}
+		tmp = tmp->next;
+	}
+}
+
+void sap_xep_theo_ngay( list head){
+	printf("1");
+	list tmp;
+	list res = make_list();
+	list tmp2 = res;
+	int i=0;
+	printf("2");
+	for(i=1; i<=30 ; i++){
+		tmp = head ->next;
+		while (tmp != NULL){
+			printf("%d",i);
+			if( tmp ->item.ngay = i){
+				tmp2 -> next = tmp;
+				tmp2 = tmp2 ->next;
+			}
+			tmp = tmp ->next;
+		}
+	}
+	head = res;
+	free(res);
+}
+
+
+
+
 void print_list(list head){
 	printf("Danh Sach Hang Hoa\n");
 	printf( "+--------------------+-------------------------+---------------+---------------+---------------+---------------+---------------+\n");
     printf("|%-20s|%-25s|%-15s|%-15s|%-15s|%-15s|%-15s|\n","MA HANG","TEN HANG","DON VI HANG","SO LUONG","DON GIA", "THANH TIEN", "NGAY NHAP");
     list tmp = head -> next;
-	head = head -> next;
-	while(head != NULL){
+	while(tmp != NULL){
 		printf( "|--------------------|-------------------------|---------------|---------------|---------------|---------------|---------------|\n");
-    	printf("|%-20s|%-25s|%-15s|%-15d|%-15d|%-15d|%-15d|\n",head -> item.mahang ,head -> item.tenhang ,head -> item.dvtinh,
-		head -> item.soluong,tmp -> item.dongia, tmp -> item.thanhtien, tmp -> item.ngay);
-		head = head -> next;
+    	printf("|%-20s|%-25s|%-15s|%-15d|%-15d|%-15d|%-15d|\n",tmp -> item.mahang ,tmp -> item.tenhang ,tmp -> item.dvtinh,
+		tmp -> item.soluong,tmp -> item.dongia, tmp -> item.thanhtien, tmp -> item.ngay);
+		tmp = tmp -> next;
 	}
 	printf( "+--------------------+-------------------------+---------------+---------------+---------------+---------------+---------------+\n");	
+}
+
+
+void aaa(){
+	printf("hieungu");
 }
