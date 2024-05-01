@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+X101
+May Giat
+Cai
+10 1000 100000 12
+A1
+Ban La
+Hop
+1 12 32 1
+B02
+TV
+Cai
+12 1 22 3
+=======
+X101
+May Giat
+Cai
+10 123.4 100.123 12
+A1
+Ban La
+Hop
+1 125.4 32.33 1
+B02 
+TV 
+Cai
+12 1 22 3
+>>>>>>> 64bc7d6 (testing)
