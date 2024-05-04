@@ -18,13 +18,13 @@ struct List{
 typedef struct List *list;
 
 list make_list();
-void insert(list head, struct Element e);
+void insert(list head, struct Element e); // chèn vào list theo thứ tự tăng dần ngày nhập
 void print_list(list head);
 void docfile(list main_list); 
 void SapXep(list main_list, int type);
 void TimKiem(list main_list, int type);
 void Xoa(list main_list, int type);
-void DieuChinh(list main_list, int type, char mahang[]);
+void DieuChinh(list main_list, int type, char mahang[]); // tăng giảm giá trị
 void swap(list tmp1, list tmp2);
 float ThanhTien(int sl, float dongia);
 void ThanhTienNgay(list main_list);
@@ -33,19 +33,19 @@ int max(int a, int b);
 int is_empty(list main_list);
 int main(){
 	list main_list = make_list();
-	int i, toggle_stop = 1;
+	int i, toggle_stop = 1; // khi nào bấm phím 0 thì stop = 0 -> dừng
 	while(toggle_stop){
         printf("\n\n\t\t     QUAN LY HANG NHAP TRONG THANG\n");
         printf("+");
 		for(i=0;i<71;i++) printf("-");printf("+\n");
 			printf("| %-70s|\n","1. Them thong tin hang nhap kho vao danh sach"); //done
 			printf("| %-70s|\n","2. Lay du lieu hang nhap kho tu file"); // done
-			printf("| %-70s|\n","3. Sap xep (theo so luong/ theo gia thanh)"); //done
-			printf("| %-70s|\n","4. Tim kiem (theo ma hang/ gia thanh/ ten mat hang)"); //done
+			printf("| %-70s|\n","3. Sap xep"); //done
+			printf("| %-70s|\n","4. Tim kiem"); //done
 			printf("| %-70s|\n","5. Dieu chinh so luong/ don gia");
-			printf("| %-70s|\n","6. Tinh thanh tien cua 1 ngay (chi phi tiet kiem)");
-			printf("| %-70s|\n","7. Tinh thanh tien cua ca thang (chi phi tiet kiem)");
-			printf("| %-70s|\n","8. Xoa mat hang ra khoi danh sach (theo ma hang/ ten hang/ theo ngay)");
+			printf("| %-70s|\n","6. Tinh thanh tien cua 1 ngay");
+			printf("| %-70s|\n","7. Tinh thanh tien cua ca thang");
+			printf("| %-70s|\n","8. Xoa mat hang ra khoi danh sach");
 			printf("| %-70s|\n","9. In danh sach cac mat hang"); //done
 			printf("| %-70s|\n","0. Thoat chuong trinh");// done
 			printf("+");
@@ -55,6 +55,9 @@ int main(){
 		switch(select){
 			case 1:
 				{
+				//fflush(stdin) là lệnh xóa hết các kí tự rác còn trên dòng để khi nhập dữ liệu k lỗi
+				//nhất là khi dùng gets
+				//nếu xử lý file thì dùng fgetc();
 				struct Element item;
 				printf("+"); for(i=0;i<71;i++) printf("-");printf("+\n");
 				printf("Hay nhap ma hang: "); fflush(stdin); gets(item.mahang);
@@ -119,14 +122,14 @@ int main(){
 				ThanhTienThang(main_list);
 				break;
 			case 8:
-				printf("Ban hay chon cach xoa mat hang!\n1: Theo ma hang\n2: Theo ten hang\n3 :Theo ngay nhap\n"); 
+				printf("Ban hay chon cach xoa mat hang!\n1: Theo ma hang\n2: Theo ten hang\n3 :Theo don vi tinh\n4: Theo ngay nhap\n"); 
 					int type;
 					do{
 					printf("Lua chon: "); 
 					scanf("%d", &type);
-					if(type < 1 || type > 3) printf("Lua chon cua ban khong hop le! Moi ban nhap lai!\n");
+					if(type < 1 || type > 4) printf("Lua chon cua ban khong hop le! Moi ban nhap lai!\n");
 					}
-					while(type < 1 || type > 3);
+					while(type < 1 || type > 4);
 					Xoa(main_list, type); 
 				break;
 			case 9:
@@ -146,8 +149,8 @@ int main(){
 }
 void docfile(list main_list){
 	FILE *fi;
-	int j = 0, file_size = 0;
-	struct Element i[100];
+	int j = 0, file_size = 0; //j và file_size giống nhau, đều là số phần tử trong file
+	struct Element i[100]; // lưu vào 1 cái struct để tí insert hết vào list cho dễ
 	char c1[100];
 	do{
 	printf("Moi nhap ten file du lieu: "); 
@@ -157,17 +160,18 @@ void docfile(list main_list){
 	if(fi == NULL) printf("File khong ton tai! Vui long nhap lai ten file\n");
 	}while(fi == NULL);
 	printf("Truy cap file %s thanh cong\n", c1);
-	while (fgets(i[j].mahang, sizeof(i[j].mahang), fi) != NULL &&
+
+	while (fgets(i[j].mahang, sizeof(i[j].mahang), fi) != NULL && //Đọc file bằng fgets lấy cả dấu cách
 	       fgets(i[j].tenhang, sizeof(i[j].tenhang), fi) != NULL &&
 	       fgets(i[j].dvtinh, sizeof(i[j].dvtinh), fi) != NULL)
 	{
-    i[j].mahang[strcspn(i[j].mahang, "\n")] = '\0';
+    i[j].mahang[strcspn(i[j].mahang, "\n")] = '\0'; //Xóa xuống dòng
     i[j].tenhang[strcspn(i[j].tenhang, "\n")] = '\0';
     i[j].dvtinh[strcspn(i[j].dvtinh, "\n")] = '\0';
 
     fscanf(fi, "%d%f%d", &i[j].soluong, &i[j].dongia, &i[j].ngay);
-    i[j].thanhtien = ThanhTien(i[j].soluong, i[j].dongia);
-    fgetc(fi);
+    i[j].thanhtien = ThanhTien(i[j].soluong, i[j].dongia); // Tính thành tiền riêng
+    fgetc(fi); // Xóa kí tự rác
     file_size++;
     j++;
 	}
@@ -194,6 +198,7 @@ void insert(list head, struct Element item){
 		if(head -> next == NULL && head -> item.ngay <= item.ngay){
 			head -> next = tmp;
 			tmp -> pre = head;
+			//giống bài poly, nhưng mà chỗ ni t không cộng dồn vào nếu nhập cùng ngày. T nghĩ v không hay lắm
 		}
 		else{
 			tmp -> next = head;
@@ -213,9 +218,10 @@ void Xoa(list main_list, int type){
 			list tmp = main_list -> next;
 			char mh[100]; int is_exist = 0;
 			printf("Nhap ma hang can xoa: ");
-			fflush(stdin);
+			fflush(stdin); // xóa kí tự rác
 			gets(mh);
 			while(tmp != NULL){
+				//strcmp của 2 xâu nếu == 0 thì là 2 xâu bằng nhau
 				if(strcmp(mh, tmp -> item.mahang) == 0){
 					is_exist = 1;
 					if(tmp -> next == NULL){
@@ -259,6 +265,30 @@ void Xoa(list main_list, int type){
 		}
 		case 3:{
 			list tmp = main_list -> next;
+			char dvtinh[100]; int is_exist = 0;
+			printf("Nhap don vi hang can xoa: ");
+			fflush(stdin);
+			gets(dvtinh);
+			while(tmp != NULL){
+				if(strcmp(dvtinh, tmp -> item.dvtinh) == 0){
+					is_exist = 1;
+					if(tmp -> next == NULL){
+						tmp = tmp -> pre;
+						tmp -> next = NULL;
+					} else{
+						tmp -> pre -> next = tmp -> next;
+						tmp -> next -> pre = tmp -> pre;
+					}
+				}
+				tmp = tmp -> next;
+			}
+			if(is_exist == 0){
+				printf("Khong tim thay don vi hang %s!\n", dvtinh);
+			}
+			break;
+		}
+		case 4:{
+			list tmp = main_list -> next;
 			int is_exist = 0, ngay;
 			printf("Nhap ngay nhap hang can xoa: ");
 			scanf("%d", &ngay);
@@ -279,7 +309,7 @@ void Xoa(list main_list, int type){
 				printf("Khong tim thay ngay nhap hang %d!\n", ngay);
 			}
 			break;
-	}
+		}
 }
 }
 void ThanhTienNgay(list main_list){ 
@@ -314,6 +344,7 @@ void ThanhTienThang(list main_list){
 	float thanhtien = 0, thanhtiengoc = 0;
 	list tmp = main_list -> next;
 	while(tmp != NULL){
+		//thành tiền giảm giá = tổng các thành tiền giảm giá của các ngày
 		thanhtien += tmp -> item.thanhtien;
 		thanhtiengoc += (tmp -> item.soluong * tmp -> item.dongia);
 		tmp = tmp -> next;
@@ -358,6 +389,7 @@ void DieuChinh(list main_list, int type, char mahang[]){
 						while(tmp != NULL){
 							if(strcmp(tmp -> item.mahang, mahang) == 0){
 								tmp -> item.soluong += sl;
+								tmp -> item.thanhtien = ThanhTien(tmp -> item.soluong, tmp -> item.dongia);
 							}
 							tmp = tmp -> next;
 						}
@@ -368,6 +400,7 @@ void DieuChinh(list main_list, int type, char mahang[]){
 						while(tmp != NULL){
 							if(strcmp(tmp -> item.mahang, mahang) == 0){
 								tmp -> item.soluong = max(0, tmp -> item.soluong - sl); 
+								tmp -> item.thanhtien = ThanhTien(tmp -> item.soluong, tmp -> item.dongia);
 							}
 							tmp = tmp -> next;
 						}
@@ -390,6 +423,7 @@ void DieuChinh(list main_list, int type, char mahang[]){
 						while(tmp != NULL){
 							if(strcmp(tmp -> item.mahang, mahang) == 0){
 								tmp -> item.dongia += dg;
+								tmp -> item.thanhtien = ThanhTien(tmp -> item.soluong, tmp -> item.dongia);
 							}
 							tmp = tmp -> next;
 						}
@@ -399,9 +433,14 @@ void DieuChinh(list main_list, int type, char mahang[]){
 						tmp = main_list -> next;
 						while(tmp != NULL){
 							if(strcmp(tmp -> item.mahang, mahang) == 0){
-								if(tmp -> item.dongia - dg < 0) tmp -> item.dongia = 0;
+								if(tmp -> item.dongia - dg < 0) 
+								{
+								tmp -> item.dongia = 0;
+								tmp -> item.thanhtien = ThanhTien(tmp -> item.soluong, tmp -> item.dongia);
+								}
 								else{
 									tmp -> item.dongia -= dg;
+									tmp -> item.thanhtien = ThanhTien(tmp -> item.soluong, tmp -> item.dongia);
 								}
 							}
 							tmp = tmp -> next;
@@ -567,6 +606,7 @@ void swap(list tmp1, list tmp2){
 	i = tmp1 -> item; 
 	tmp1 -> item = tmp2 -> item;
 	tmp2 -> item = i; 
+	//Swap 2 node đơn giản là chỉ swap dữ liệu bên trong 2 node chứ không cần swap cả 2 node
 }
 int is_empty(list main_list){
 	if(main_list -> next == NULL) return 1;
