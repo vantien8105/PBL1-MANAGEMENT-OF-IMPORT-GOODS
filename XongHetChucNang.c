@@ -29,6 +29,7 @@ void swap(list tmp1, list tmp2);
 float ThanhTien(int sl, float dongia);
 void ThanhTienNgay(list main_list);
 void ThanhTienThang(list main_list);
+void destroy(list main_list);
 int max(int a, int b);
 int is_empty(list main_list);
 int main(){
@@ -48,6 +49,7 @@ int main(){
 			printf("| %-70s|\n","7. Tinh thanh tien cua ca thang");
 			printf("| %-70s|\n","8. Xoa mat hang ra khoi danh sach");
 			printf("| %-70s|\n","9. In danh sach cac mat hang"); //done
+			printf("| %-70s|\n","10. Lam trong danh sach hien tai");
 			printf("| %-70s|\n","0. Thoat chuong trinh");// done
 			printf("+");
 			for(i=0;i<71;i++) printf("-");printf("+\n\n");
@@ -96,7 +98,9 @@ int main(){
 					if(type < 1 || type > 4) printf("Lua chon cua ban khong hop le! Moi ban nhap lai!\n");
 					}
 					while(type < 1 || type > 4);
-					SapXep(main_list, type); 
+					SapXep(main_list, type);
+					printf("Nhan phim bat ki de tiep tuc\n");
+					getch(); 
 					system("cls");
 				}
 				break;
@@ -131,6 +135,8 @@ int main(){
 					}
 					while(type < 1 || type > 2);
 					DieuChinh(main_list, type, mahang);
+					printf("Nhan phim bat ki de tiep tuc\n");
+					getch();
 					system("cls");
 				}
 				break;
@@ -176,6 +182,16 @@ int main(){
 				printf("Nhan phim bat ki de tiep tuc\n");
 				getch();
 				system("cls");
+			}
+				break;
+			case 10:
+			{
+				system("cls");
+				destroy(main_list);
+				printf("Da huy danh sach hien tai!\n");
+				printf("Nhan phim bat ki de tiep tuc\n");
+				getch();
+				system("cls");	
 			}
 				break;
 			case 0:
@@ -671,6 +687,16 @@ void swap(list tmp1, list tmp2){
 	tmp1 -> item = tmp2 -> item;
 	tmp2 -> item = i; 
 	//Swap 2 node đơn giản là chỉ swap dữ liệu bên trong 2 node chứ không cần swap cả 2 node
+}
+void destroy(list main_list){
+	list cur = main_list;
+	list next;
+	while(cur != NULL){
+		next = cur -> next;
+		free(cur);
+		cur = next;
+	}
+	main_list -> next = NULL;
 }
 int is_empty(list main_list){
 	if(main_list -> next == NULL) return 1;
