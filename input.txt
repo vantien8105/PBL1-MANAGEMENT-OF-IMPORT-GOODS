@@ -1,12 +1,28 @@
 X101
 May Giat
 Cai
-10 1000 100000 12
+105 10.25 12
 A1
 Ban La
 Hop
-1 12 32 1
+207 123.2 1
 B02
 TV
 Cai
-12 1 22 3
+12 1.22 3
+A22
+Ban Chai
+Cai
+13 12.55 23
+X08
+Cay Thong Noel
+Cay
+6 100.29 3
+L11
+Dien Thoai
+Cai
+6 1000.9 30
+M70
+Laptop
+Cai
+1 1239.2 30

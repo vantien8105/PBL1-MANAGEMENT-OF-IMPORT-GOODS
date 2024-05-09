@@ -14,7 +14,7 @@ struct List{
     struct List *next;
     struct List *pre;
 };
-void demo();
+
 typedef struct List *list;
 
 list make_list();
@@ -35,6 +35,7 @@ int main(){
 	list main_list = make_list();
 	int i, toggle_stop = 1; // khi nào bấm phím 0 thì stop = 0 -> dừng
 	while(toggle_stop){
+		system("cls");
         printf("\n\n\t\t     QUAN LY HANG NHAP TRONG THANG\n");
         printf("+");
 		for(i=0;i<71;i++) printf("-");printf("+\n");
@@ -50,11 +51,12 @@ int main(){
 			printf("| %-70s|\n","0. Thoat chuong trinh");// done
 			printf("+");
 			for(i=0;i<71;i++) printf("-");printf("+\n\n");
-		int select;
-		printf("Moi ban nhap lua chon: "); scanf("%d", &select);
+			int select;
+			printf("Moi ban nhap lua chon: "); scanf("%d", &select);
 		switch(select){
 			case 1:
 				{
+				system("cls");
 				//fflush(stdin) là lệnh xóa hết các kí tự rác còn trên dòng để khi nhập dữ liệu k lỗi
 				//nhất là khi dùng gets
 				//nếu xử lý file thì dùng fgetc();
@@ -69,13 +71,23 @@ int main(){
 				printf("Hay ban nhap ngay nhap: "); scanf("%d", &item.ngay);
 				printf("+"); for(i=0;i<71;i++) printf("-");printf("+\n");
 				insert(main_list, item);
+				printf("Nhan phim bat ki de tiep tuc\n");
+				getch();
+				system("cls");
 			}
 				break;
 			case 2:
+			{
+				system("cls");
 				docfile(main_list);
+				printf("Nhan phim bat ki de tiep tuc\n");
+				getch();
+				system("cls");
+			}
 				break;
 			case 3:
 				{
+					system("cls");
 					printf("Ban hay chon cach sap xep!\n1: Theo so luong\n2: Theo don gia\n3: Theo thanh tien\n4: Theo ngay nhap\n");
 					int type;
 					do{
@@ -85,10 +97,12 @@ int main(){
 					}
 					while(type < 1 || type > 4);
 					SapXep(main_list, type); 
+					system("cls");
 				}
 				break;
 			case 4:
 				{
+					system("cls");
 					printf("Ban hay chon cach tim kiem!\n1: Theo ma hang\n2: Theo ten hang\n3 :Theo ngay nhap\n"); 
 					int type;
 					do{
@@ -98,10 +112,14 @@ int main(){
 					}
 					while(type < 1 || type > 3);
 					TimKiem(main_list, type); 
+					printf("Nhan phim bat ki de tiep tuc\n");
+					getch();
+					system("cls");
 				}
 				break;
 			case 5:
 				{
+					system("cls");
 					char mahang[100];
 					printf("Nhap ma hang can dieu chinh: "); fflush(stdin); gets(mahang);
 					printf("Hay chon du lieu can dieu chinh!\n1: So luong\n2: Don gia\n"); 
@@ -113,16 +131,30 @@ int main(){
 					}
 					while(type < 1 || type > 2);
 					DieuChinh(main_list, type, mahang);
+					system("cls");
 				}
 				break;
 			case 6:
-				ThanhTienNgay(main_list);
+				{
+					system("cls");
+					ThanhTienNgay(main_list);
+					printf("Nhan phim bat ki de tiep tuc\n");
+					getch();
+					system("cls");
+				}
 				break;
 			case 7:
-				ThanhTienThang(main_list);
+				{
+					ThanhTienThang(main_list);
+					printf("Nhan phim bat ki de tiep tuc\n");
+					getch();
+					system("cls");
+				}
 				break;
 			case 8:
-				printf("Ban hay chon cach xoa mat hang!\n1: Theo ma hang\n2: Theo ten hang\n3 :Theo don vi tinh\n4: Theo ngay nhap\n"); 
+				{
+					system("cls");
+					printf("Ban hay chon cach xoa mat hang!\n1: Theo ma hang\n2: Theo ten hang\n3 :Theo don vi tinh\n4: Theo ngay nhap\n"); 
 					int type;
 					do{
 					printf("Lua chon: "); 
@@ -131,17 +163,33 @@ int main(){
 					}
 					while(type < 1 || type > 4);
 					Xoa(main_list, type); 
+					printf("Thuc hien thanh cong\n");
+					printf("Nhan phim bat ki de tiep tuc\n");
+					getch();
+					system("cls");
+				}
 				break;
 			case 9:
+			{
+				system("cls");
 				print_list(main_list);
+				printf("Nhan phim bat ki de tiep tuc\n");
+				getch();
+				system("cls");
+			}
 				break;
 			case 0:
 				toggle_stop = 0;
 				printf("Ban da thoat chuong trinh thanh cong!\n");
 				break;
-			default:
+			default:{
+				system("cls");
 				printf("Lua chon cua ban khong hop le! Moi ban nhap lai\n");
+				printf("Nhan phim bat ki de tiep tuc\n");
+				getch();
+				system("cls");
 				continue;
+			}
 		}
 	}
 	
@@ -179,7 +227,6 @@ void docfile(list main_list){
 	for(j = 0; j < file_size; j++){
 		insert(main_list, i[j]);
 	}
-	
 } 
 list make_list(){
     list head = malloc(sizeof(struct List));
@@ -333,8 +380,25 @@ void ThanhTienNgay(list main_list){
 		}
 		tmp = tmp -> next;
 	}
+	main_list = main_list -> next;
+	tmp = main_list;
+	list print = make_list();
+	int day = ngay; int is_exist = 0;
+	while(tmp != NULL){
+		if(day == tmp -> item.ngay){
+			is_exist = 1;
+			insert(print, tmp -> item);
+		}
+		tmp = tmp -> next;
+	}
+	if(is_exist == 0){
+		printf("Khong tim thay ngay nhap hang %d!\n", day);
+	}
+	else{
+		print_list(print);
+	}
 	printf("Thanh tien trong ngay %d la: %.2f\n", ngay, thanhtien);
-	printf("Chi phi tiet kiem duoc trong ngay %d la: %.2f", ngay, thanhtiengoc - thanhtien);
+	printf("Chi phi tiet kiem duoc trong ngay %d la: %.2f\n", ngay, thanhtiengoc - thanhtien);
 }
 void ThanhTienThang(list main_list){
 	if(is_empty(main_list)){
@@ -350,7 +414,7 @@ void ThanhTienThang(list main_list){
 		tmp = tmp -> next;
 	}
 	printf("Thanh tien trong thang la: %.2f\n", thanhtien);
-	printf("Chi phi tiet kiem duoc trong thang la: %.2f", thanhtiengoc - thanhtien);
+	printf("Chi phi tiet kiem duoc trong thang la: %.2f\n", thanhtiengoc - thanhtien);
 }
 void DieuChinh(list main_list, int type, char mahang[]){
 	if(is_empty(main_list)){
