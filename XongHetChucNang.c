@@ -14,7 +14,7 @@ struct List{
     struct List *next;
     struct List *pre;
 };
-
+void demo();
 typedef struct List *list;
 
 list make_list();
