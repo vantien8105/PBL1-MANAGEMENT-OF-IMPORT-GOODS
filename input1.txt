@@ -1,0 +1,44 @@
+A12 
+Ao Khoac
+Cai
+105 10.25 14
+A23
+Ban
+Cai
+207 123.2 1
+B88
+Rem Cua
+Cai
+12 1.22 3
+A222
+Ban Chai
+Cai
+13 12.55 23
+X0898
+Khau trang
+Hop
+6 100.29 3
+L1112
+Dien Thoai SSGX
+Cai
+6 1000.9 30
+M7033
+Laptop
+Cai
+1 1239.2 30
+LI22
+Canh Quat
+Cai
+22 93.33 7
+KM88
+CapSach
+Cai
+1 33 2
+X101
+May Giat
+Cai
+105 10.25 12
+A1
+Ban La
+Hop
+207 123.2 1

@@ -1,28 +1,12 @@
-X101
-May Giat
-Cai
-105 10.25 12
-A1
-Ban La
-Hop
-207 123.2 1
-B02
-TV
-Cai
-12 1.22 3
-A22
-Ban Chai
-Cai
-13 12.55 23
-X08
-Cay Thong Noel
-Cay
-6 100.29 3
-L11
-Dien Thoai
-Cai
-6 1000.9 30
-M70
-Laptop
-Cai
-1 1239.2 30
+A1,Ban Lam Viec,Do Noi That,207,123.20,1
+D71,May Anh,Thiet Bi,19,799.99,1
+C09,Tu Quan Ao,Do Noi That,42,300.50,2
+B02,Tivi,Thiet Bi,12,1.22,3
+X08,Cay Thong Noel,Cay Canh,6,100.29,3
+E33,Ban Tra,Do Noi That,31,50.25,4
+X212,May Lanh,Thiet Bi,88,450.99,5
+B45,Ban Hoc,Do Noi That,25,79.75,8
+X101,May Giat,Thiet Bi,105,10.25,12
+KKL15,Kem Chong nang,Hop,12,19.25,18
+AAI18,Giao Trinh,Cuon,199,12.10,19
+A22,Ban Ghe,Do Noi That,13,12.55,23
