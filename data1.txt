@@ -1,0 +1,10 @@
+F34,Laptop,Thiet Bi,50,900.75,7
+G76,Den Trang Tri,Do Noi That,40,150.30,10
+H22,Sach,Giao Duc,100,20.00,15
+J90,Lo Vi Song,Thiet Bi,25,200.99,9
+K13,Tap Vu,Cay Canh,15,10.75,20
+L07,Ghe Xoay,Do Noi That,35,85.50,11
+M56,Quat Dien,Thiet Bi,60,45.20,12
+N89,Binh Hoa,Cay Canh,20,30.50,13
+P45,Tam Tham,Do Noi That,55,25.99,8
+Q17,Noi Com Dien,Thiet Bi,45,125.75,6

@@ -1,0 +1,126 @@
+Ma hang: A22
+Ten hang: Ban Ghe
+Don vi hang: Do Noi That
+So luong: 13
+Don gia: 12.55
+Thanh tien: 163.15
+Ngay nhap: 23
+
+
+Ma hang: D71
+Ten hang: May Anh
+Don vi hang: Thiet Bi
+So luong: 19
+Don gia: 799.99
+Thanh tien: 15199.81
+Ngay nhap: 1
+
+
+Ma hang: B45
+Ten hang: Ban Hoc
+Don vi hang: Do Noi That
+So luong: 25
+Don gia: 79.75
+Thanh tien: 1993.75
+Ngay nhap: 8
+
+
+Ma hang: E33
+Ten hang: Ban Tra
+Don vi hang: Do Noi That
+So luong: 31
+Don gia: 50.25
+Thanh tien: 1557.75
+Ngay nhap: 31
+
+
+Ma hang: C09
+Ten hang: Tu Quan Ao
+Don vi hang: Do Noi That
+So luong: 42
+Don gia: 300.50
+Thanh tien: 12621.00
+Ngay nhap: 26
+
+
+Ma hang: X9F
+Ten hang: May Ep Trai Cay
+Don vi hang: Dien Tu
+So luong: 65
+Don gia: 45.60
+Thanh tien: 2964.00
+Ngay nhap: 2
+
+
+Ma hang: G46
+Ten hang: Sach Tieng Anh
+Don vi hang: Van Hoa
+So luong: 75
+Don gia: 30.00
+Thanh tien: 2250.00
+Ngay nhap: 10
+
+
+Ma hang: C54
+Ten hang: Quat
+Don vi hang: Dien Gia Dung
+So luong: 80
+Don gia: 30.75
+Thanh tien: 2460.00
+Ngay nhap: 5
+
+
+Ma hang: X212
+Ten hang: May Lanh
+Don vi hang: Thiet Bi
+So luong: 88
+Don gia: 450.99
+Thanh tien: 39687.12
+Ngay nhap: 5
+
+
+Ma hang: D77
+Ten hang: Lo Vi Song
+Don vi hang: Dien Tu
+So luong: 92
+Don gia: 75.30
+Thanh tien: 6927.60
+Ngay nhap: 4
+
+
+Ma hang: X101
+Ten hang: May Giat
+Don vi hang: Thiet Bi
+So luong: 105
+Don gia: 10.25
+Thanh tien: 968.63
+Ngay nhap: 12
+
+
+Ma hang: H59
+Ten hang: Noi Com Dien
+Don vi hang: Gia Dung
+So luong: 110
+Don gia: 85.40
+Thanh tien: 8454.60
+Ngay nhap: 12
+
+
+Ma hang: A1
+Ten hang: Ban Lam Viec
+Don vi hang: Do Noi That
+So luong: 207
+Don gia: 123.20
+Thanh tien: 21677.04
+Ngay nhap: 1
+
+
+Ma hang: KKK
+Ten hang: Sach Vo
+Don vi hang: Cuon
+So luong: 1000
+Don gia: 10.20
+Thanh tien: 8670.00
+Ngay nhap: 31
+
+

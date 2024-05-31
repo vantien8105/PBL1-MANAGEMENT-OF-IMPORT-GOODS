@@ -1,10 +1,20 @@
-X101,May Giat,Thiet Bi,105,10.25,12
-A1,Ban Lam Viec,Do Noi That,207,123.2,1
-B02,Tivi,Thiet Bi,12,1.22,3
-A22,Ban Ghe,Do Noi That,13,12.55,23
-X08,Cay Thong Noel,Cay Canh,6,100.29,3
-X212,May Lanh,Thiet Bi,88,450.99,5
-B45,Ban Hoc,Do Noi That,25,79.75,8
-C09,Tu Quan Ao,Do Noi That,42,300.50,2
-D71,May Anh,Thiet Bi,19,799.99,1
-E33,Ban Tra,Do Noi That,31,50.25,4
+M45,Lo Hoa,Do Noi That,25,40.99,14
+N76,Binh Suu Tap,Cay Canh,30,15.00,7
+O89,May Chieu,Thiet Bi,12,320.75,9
+P23,Bo Ban An,Do Noi That,6,650.50,4
+Q56,Dau Goi,Dung Cu Ve Sinh,50,12.99,10
+R78,Quat Tran,Thiet Bi,22,80.75,11
+S34,Den LED,Thiet Bi,35,45.99,8
+T99,Rem Cua,Do Noi That,40,110.50,13
+U12,San Vuon,Cay Canh,8,500.00,3
+V45,Lo Nuong,Thiet Bi,10,550.25,5
+W67,Thiet Bi Ghi Am,Thiet Bi,7,300.75,12
+X89,Binh Thuoc Lao,Do Noi That,15,60.00,11
+Y23,Cay Kieng,Cay Canh,18,90.25,2
+Z56,May Tinh Bang,Thiet Bi,25,250.50,6
+A34,Tham Lau Nha,Do Noi That,50,35.75,10
+B12,Ban Doc Sach,Do Noi That,10,85.50,8
+C45,Do Voi Hoa,Do Noi That,22,120.75,9
+D78,Thiet Bi Lanh,Thiet Bi,14,750.99,4
+E90,Tui Xach,Thoi Trang,30,300.99,7
+F23,Giay Cao Got,Thoi Trang,20,200.50,5

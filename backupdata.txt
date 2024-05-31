@@ -1,0 +1,14 @@
+A1,Ban Lam Viec,Do Noi That,207,123.20,1
+D71,May Anh,Thiet Bi,19,799.99,1
+X9F,May Ep Trai Cay,Dien Tu,65,45.60,2
+C09,Tu Quan Ao,Do Noi That,42,300.50,26
+D77,Lo Vi Song,Dien Tu,92,75.30,4
+E33,Ban Tra,Do Noi That,31,50.25,31
+C54,Quat,Dien Gia Dung,80,30.75,5
+X212,May Lanh,Thiet Bi,88,450.99,5
+B45,Ban Hoc,Do Noi That,25,79.75,8
+G46,Sach Tieng Anh,Van Hoa,75,30.00,10
+E18,Dau Goi,My Pham,150,12.90,12
+H59,Noi Com Dien,Gia Dung,110,85.40,12
+X101,May Giat,Thiet Bi,105,10.25,12
+A22,Ban Ghe,Do Noi That,13,12.55,23

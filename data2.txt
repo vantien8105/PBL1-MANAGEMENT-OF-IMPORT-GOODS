@@ -1,0 +1,20 @@
+R21,Ke Sach,Do Noi That,28,70.15,14
+S65,Loa Bluetooth,Thiet Bi,32,110.99,5
+T88,Dong Ho,Do Noi That,14,200.00,19
+U34,May Say Toc,Thiet Bi,50,55.75,10
+V99,Cay Canh Nho,Cay Canh,18,15.45,16
+W56,Giuong Ngu,Do Noi That,8,500.99,3
+X12,Den Ban,Do Noi That,44,45.00,12
+Y78,Am Tra,Do Noi That,22,75.25,7
+Z34,Noi Chien Khong Dau,Thiet Bi,40,220.00,6
+A07,Tham Trai San,Do Noi That,30,90.50,9
+B89,May Loc Nuoc,Thiet Bi,20,300.75,4
+C34,Ban Trang Diem,Do Noi That,12,150.25,11
+D56,Am Ly,Thiet Bi,6,350.00,2
+E19,Ghe Sofa,Do Noi That,15,400.75,8
+F88,May Rua Chen,Thiet Bi,10,700.99,1
+G23,Be Nuoc Nong,Thiet Bi,25,180.50,13
+H45,Ke Tivi,Do Noi That,20,250.99,10
+J67,May Hut Bui,Thiet Bi,18,95.75,5
+K29,Den Chum,Do Noi That,10,600.00,6
+L78,Cay Canh Lon,Cay Canh,5,200.25,3
